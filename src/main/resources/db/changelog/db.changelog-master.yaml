@@ -1,0 +1,70 @@
+databaseChangeLog:
+- changeSet:
+    id: 1606686564020-1
+    author: thiba (generated)
+    changes:
+    - createTable:
+        columns:
+        - column:
+            constraints:
+              nullable: false
+              primaryKey: true
+              primaryKeyName: book_pkey
+            name: id
+            type: UUID
+        - column:
+            constraints:
+              nullable: false
+            name: name
+            type: VARCHAR(255)
+        - column:
+            constraints:
+              nullable: false
+            name: author
+            type: UUID
+        tableName: book
+- changeSet:
+    id: 1606686564020-2
+    author: thiba (generated)
+    changes:
+    - createTable:
+        columns:
+        - column:
+            constraints:
+              nullable: false
+              primaryKey: true
+              primaryKeyName: author_pkey
+            name: id
+            type: UUID
+        - column:
+            constraints:
+              nullable: false
+            name: name
+            type: VARCHAR(255)
+        tableName: author
+- changeSet:
+    id: 1606686564020-3
+    author: thiba (generated)
+    changes:
+    - createIndex:
+        columns:
+        - column:
+            name: author
+        indexName: fki_book_to_author_FK
+        tableName: book
+- changeSet:
+    id: 1606686564020-4
+    author: thiba (generated)
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: author
+        baseTableName: book
+        constraintName: book_to_author_FK
+        deferrable: false
+        initiallyDeferred: false
+        onDelete: NO ACTION
+        onUpdate: NO ACTION
+        referencedColumnNames: id
+        referencedTableName: author
+        validate: true
+
