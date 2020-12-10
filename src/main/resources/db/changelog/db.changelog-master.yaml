@@ -15,13 +15,18 @@ databaseChangeLog:
         - column:
             constraints:
               nullable: false
-            name: name
+            name: title
             type: VARCHAR(255)
         - column:
             constraints:
               nullable: false
             name: author
             type: UUID
+        - column:
+            constraints:
+              nullable: false
+            name: date_of_parution
+            type: TIMESTAMP
         tableName: book
 - changeSet:
     id: 1606686564020-2
@@ -67,4 +72,39 @@ databaseChangeLog:
         referencedColumnNames: id
         referencedTableName: author
         validate: true
+
+- changeSet:
+    id: 1606686564020-5
+    author: thiba (generated)
+    changes:
+    - createTable:
+        columns:
+        - column:
+            constraints:
+              nullable: false
+              primaryKey: true
+              primaryKeyName: person_pkey
+            name: id
+            type: UUID
+        - column:
+            constraints:
+              nullable: false
+            name: name
+            type: VARCHAR(255)
+        - column:
+            constraints:
+              nullable: false
+            name: street
+            type: VARCHAR(255)
+        - column:
+            constraints:
+              nullable: false
+            name: zip_code
+            type: VARCHAR(255)
+        - column:
+            constraints:
+              nullable: false
+            name: city
+            type: VARCHAR(255)
+        tableName: person
 

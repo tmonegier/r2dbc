@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.UUID;
 
 import org.springframework.data.annotation.Id;
+import org.springframework.data.relational.core.mapping.MappedCollection;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -20,6 +21,7 @@ public class Author {
 	private UUID id;
 	private String name;
 	
-	List<Book> books;
+	@MappedCollection(idColumn = "id")
+	private List<Book> books;
 
 }

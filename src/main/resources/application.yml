@@ -7,7 +7,10 @@ spring:
     url: jdbc:postgresql://localhost:5433/mydb
     user: postgres
     password: admin
-  r2dbc:
-    url: r2dbc:postgresql://localhost:5433/mydb
-    username: postgres
-    password: admin
+    
+logging:
+  level:
+    org:
+      springframework:
+        data:
+          r2dbc: DEBUG
