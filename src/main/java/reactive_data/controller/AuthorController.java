@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import lombok.RequiredArgsConstructor;
 import reactive_data.model.Author;
-import reactive_data.repositories.AuthorRepository;
+import reactive_data.repositories.AuthorCustomRepository;
 import reactor.core.publisher.Flux;
 
 @RestController
@@ -14,7 +14,7 @@ import reactor.core.publisher.Flux;
 @RequiredArgsConstructor
 public class AuthorController {
 	
-	private final AuthorRepository authorRepository;
+	private final AuthorCustomRepository authorRepository;
 	
 	@GetMapping
 	public Flux<Author> findAllAuthors() {

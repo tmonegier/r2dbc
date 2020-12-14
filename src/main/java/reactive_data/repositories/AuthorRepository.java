@@ -10,5 +10,4 @@ import reactive_data.model.Author;
 @Repository
 public interface AuthorRepository extends R2dbcRepository<Author, UUID> {
 	
-
 }

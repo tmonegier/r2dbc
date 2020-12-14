@@ -1,4 +1,6 @@
 spring:
+  jmx:
+    enabled: true
   liquibase:
     url: jdbc:postgresql://localhost:5433/mydb
     user: postgres
