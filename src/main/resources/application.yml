@@ -1,12 +1,10 @@
 spring:
-  jmx:
-    enabled: true
   liquibase:
-    url: jdbc:postgresql://localhost:5433/mydb
+    url: jdbc:postgresql://localhost:5432/reactive_examples_db
     user: postgres
     password: admin
   datasource:
-    url: jdbc:postgresql://localhost:5433/mydb
+    url: jdbc:postgresql://localhost:5432/reactive_examples_db
     user: postgres
     password: admin
     

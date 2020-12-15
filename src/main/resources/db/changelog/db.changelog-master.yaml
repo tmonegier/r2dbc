@@ -26,7 +26,7 @@ databaseChangeLog:
             constraints:
               nullable: false
             name: date_of_parution
-            type: TIMESTAMP
+            type: date
         tableName: book
 - changeSet:
     id: 1606686564020-2
